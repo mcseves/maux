@@ -1,0 +1,13 @@
+---
+title: Voice
+layout: default
+---
+<div>
+<p>Result</p>
+<p id="result"></p>
+</div>
+
+<script>
+var data = sessionStorage.getItem('goal');
+document.getElementById("result").innerHTML = data.stringify
+</script>

@@ -1,0 +1,91 @@
+---
+title: AI Character
+layout: default
+---
+
+<div class="mx-auto px-8 text-left"> 
+<h1 class="text-xl"> Setting up the stage </h1>
+<h2 class="text-lg"> The first step of the exercise is to think about the work you are doing</h2>
+<p class="text-md"> Writing down the definitions you decided with your team will be an aid to think about it all</p>
+</div>
+
+<div class="w-full max-w-xs">
+  <form id="form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="goal">
+        What is the goal of this AI?
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="goal" type="text" placeholder="Write your goal">
+    </div>
+    <div class="mb-6">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="audience">
+        Who is the target audience?
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="audience" type="audience" placeholder="Write your target audience">
+    </div>
+    <div class="flex items-center justify-between">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="submit" type="submit">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
+
+{# <div id="first-stage-questions">
+    <p>What is the goal of this AI?</p>
+        <form>
+        <input id="goal" type="text" placeholder="Goal" required />
+        </form>
+    
+    <p>What is the goal of this AI?</p>
+        <form>
+        <input id="audience" type="text" placeholder="Audience" required />
+        </form>
+
+</div> #}
+
+<div class="relative h-32 w-32">
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute bottom-0 right-0 h-16 w-32">
+  <a href="/voice">Next page</a>
+</button>
+
+</div>
+
+<script>
+const form = document.querySelector('form')
+const button = document.querySelector('submit')
+const goal = document.getElementById('goal')
+const audience = document.getElementById('audience')
+
+let goalDefinition = localStorage.getItem('goal')
+  ? JSON.parse(localStorage.getItem('goal'))
+  : []
+localStorage.setItem('goal', JSON.stringify(goalDefinition))
+
+let audienceDefinition = localStorage.getItem('audience')
+  ? JSON.parse(localStorage.getItem('audience'))
+  : []
+localStorage.setItem('audience', JSON.stringify(audienceDefinition))
+
+{# const data = JSON.parse(sessionStorage.getItem('audience')) #}
+
+function logSubmit(event) {
+    console.log("teste")
+    event.preventDefault();
+  localStorage.setItem('goal', JSON.stringify(goalDefinition))
+  localStorage.setItem('audience', JSON.stringify(audienceDefinition))
+  console.log(localStorage)
+}
+
+form.addEventListener('submit', logSubmit);
+{# 
+button.addEventListener('submit', function (e) {
+    console.log("hello")
+  e.preventDefault()
+  sessionStorage.setItem('goal', JSON.stringify(goalDefinition))
+  sessionStorage.setItem('audience', JSON.stringify(audienceDefinition))
+}) #}
+
+
+
+</script>
