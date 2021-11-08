@@ -1,0 +1,48 @@
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-radar.min.js"></script>
+
+<div id="container" class="h-64"></div>
+
+<script>
+    anychart.onDocumentReady(function () {
+      // our data from bulbapedia
+     var data1 = [
+       {x: "Speed", value: 65},
+       {x: "HP", value: 39},
+       {x: "Defense", value: 43},
+       {x: "Special Defense", value: 50},
+       {x: "Special Attack", value: 60},
+       {x: "Attack", value: 52}
+     ];
+
+
+     // create radar chart
+     var chart = anychart.radar();
+
+    chart.height = "500px";
+
+     // set chart yScale settings
+     chart.yScale()
+       .minimum(35)
+       .maximum(65)
+       .ticks({'interval':5});
+
+      // color alternating cells
+      chart.yGrid().palette(["gray 0.1", "gray 0.2"]);
+
+      // create first series
+      chart.area(data1).name('Charmander').markers(true).fill("#E55934", 0.3).stroke("#E55934")
+
+      // set chart title
+      chart.title("Starter Pokemon Chart")
+        // set legend
+        .legend(true);
+
+      // set container id for the chart
+      chart.container('container');
+      // initiate chart drawing
+      chart.draw();
+
+    });
+
+</script>
