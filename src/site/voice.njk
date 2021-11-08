@@ -8,6 +8,11 @@ layout: default
 </div>
 
 <script>
-var data = sessionStorage.getItem('goal');
-document.getElementById("result").innerHTML = data.stringify
+var goals = sessionStorage.getItem('name')
+var audience = sessionStorage.getItem('email');
+
+console.log(goals);
+console.log(audience);
+
+document.getElementById("result").innerHTML = goals;
 </script>
