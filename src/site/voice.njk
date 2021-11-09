@@ -6,7 +6,16 @@ layout: default
 <p>Result</p>
 <p id="goal"></p>
 <p id="audience"></p>
+
+   <section class="section">
+     <div class="rangeContainer">
+       <input id="priceRange" class="slider" type="range" min="0" max="5" value="2" aria-label="Check your loyalty discount">
+    </div>
+   </section>
+
 </div>
+
+
 
 <script>
 var goal = sessionStorage.getItem('goal')
