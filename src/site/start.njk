@@ -4,23 +4,38 @@ layout: default
 ---
 
 <div class="mx-auto px-8 text-left"> 
+<div class="my-4">
 <h1 class="text-xl"> Setting up the stage </h1>
 <h2 class="text-lg"> The first step of the exercise is to think about the work you are doing</h2>
 <p class="text-md"> Writing down the definitions you decided with your team will be an aid to think about it all</p>
 </div>
 
 <form>
-   <label for="name">Name</label>
-   <input type="text" name="name" id="names" />
-<br>
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" />
-<br>
-    <button type="submit">Submit</button>
+    <div>
+        <label for="goal" class="block text-sm font-medium text-gray-700">
+        What is the goal of this application?
+        </label>
+        <div class="mt-1">
+        <textarea id="goal" name="goal" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Write down the objectives of this AI. How will it be used? What problems will it aid?"></textarea>
+        </div>
+    </div>
+
+    <div>
+        <label for="audience" class="block text-sm font-medium text-gray-700">
+        Who is this application for?
+        </label>
+        <div class="mt-1">
+        <textarea id="audience" name="audience" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Write down the objectives of this AI. How will it be used? What problems will it aid?"></textarea>
+        </div>
+    </div>
+
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded absolute px-8 py-2" type="submit">Submit</button>
   </form>
 
-<div class="relative h-32 w-32">
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute bottom-0 right-0 h-16 w-32">
+  </div>
+
+<div class="my-32">
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute bottom-auto right-2 h-16 w-32">
   <a href="/voice">Next page</a>
 </button>
 
@@ -35,14 +50,14 @@ function handleSubmit(event) {
     event.preventDefault();
     console.log("oie");
 
-    var nameValue = document.getElementById("names").value;
-    var emailValue = document.getElementById("email").value;
+    var goalValue = document.getElementById("goal").value;
+    var audienceValue = document.getElementById("audience").value;
 
-    console.log(nameValue);
-    console.log(emailValue);
+    console.log(goalValue);
+    console.log(audienceValue);
 
-    sessionStorage.setItem('name', nameValue);
-    sessionStorage.setItem('email', emailValue);
+    sessionStorage.setItem('goal', goalValue);
+    sessionStorage.setItem('audience', audienceValue);
     console.log(sessionStorage);
 
   }

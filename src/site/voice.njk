@@ -4,15 +4,17 @@ layout: default
 ---
 <div>
 <p>Result</p>
-<p id="result"></p>
+<p id="goal"></p>
+<p id="audience"></p>
 </div>
 
 <script>
-var goals = sessionStorage.getItem('name')
-var audience = sessionStorage.getItem('email');
+var goal = sessionStorage.getItem('goal')
+var audience = sessionStorage.getItem('audience');
 
-console.log(goals);
+console.log(goal);
 console.log(audience);
 
-document.getElementById("result").innerHTML = goals;
+document.getElementById("goal").innerHTML = goal;
+document.getElementById("audience").innerHTML = audience;
 </script>
