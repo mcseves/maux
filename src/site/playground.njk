@@ -1,0 +1,35 @@
+---
+title: Playground
+layout: default
+---
+
+<div>
+  
+<input type="range" name="lf_lbs" min="0" max="5" value="5" class="sim_setup" id="voiceFirst" onchange="adjust_Second();">
+<br />
+
+<input type="range" name="front_stagger" min="0" max="5" value="0" class="sim_setup" id="voiceSecond" onchange="adjust_First();">
+</div>
+
+
+<script>
+
+{# var lf_lbs_range = document.getElementById("voiceFirst"); #}
+{# var front_stagger_range = document.getElementById("voiceSecond"); 
+   #}
+  
+// Left front pressure //
+function adjust_First() {
+    voiceFirst.value = 5-(document.getElementById("voiceSecond").value);
+  
+}
+ 
+  
+// Front Stagger //
+function adjust_Second() {
+    voiceSecond.value = 5-(document.getElementById("voiceFirst").value);
+}
+
+adjust_First();
+adjust_Second();
+</script>

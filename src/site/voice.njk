@@ -3,27 +3,78 @@ title: Voice
 layout: default
 ---
 <div>
-<p>Result</p>
-<p id="goal"></p>
-<p id="audience"></p>
+    <p>Result</p>
+    <p id="goal"></p>
+    <p id="audience"></p>
+</div>
 
-   <section class="section">
-     <div class="rangeContainer">
-       <input id="priceRange" class="slider" type="range" min="0" max="5" value="2" aria-label="Check your loyalty discount">
+<section class="section">
+    <div class="rangeContainer">
+        <p id="first-input-left"> Serious </p>
+        <input id="voiceFirst" class="slider" type="range" min="0" max="5" value="2" aria-label="Analytical or Qualitative" onchange="adjust_Voice_Second();">
+        <p id="first-input-right"> good humour </p>
+
+        <p> think </p>
+        <input id="voiceSecond" class="slider" type="range" min="0" max="5" value="3" aria-label="Assertive or Advisor" onchange="adjust_Voice_First();">
+        <p> think agains </p>
     </div>
-   </section>
+</section>
+
+<div class="my-32">
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute bottom-auto right-2 h-16 w-32" 
+onclick="nextPage();">
+  <a href="/traits">Next page</a>
+</button>
 
 </div>
 
-
-
 <script>
-var goal = sessionStorage.getItem('goal')
+{# show goal and audience #}
+var goal = sessionStorage.getItem('goal');
 var audience = sessionStorage.getItem('audience');
-
-console.log(goal);
-console.log(audience);
-
 document.getElementById("goal").innerHTML = goal;
 document.getElementById("audience").innerHTML = audience;
+
+{# slider #}
+var voiceFirstItem = document.getElementById("voiceFirst");
+var voiceSecondItem = document.getElementById("voiceSecond"); 
+  
+  
+// Left front pressure //
+function adjust_Voice_First() {
+    voiceFirst.value = 5 - document.getElementById("voiceSecond").value;
+    console.log(voiceFirst.value);
+  
+}
+  
+// Front Stagger //
+function adjust_Voice_Second() {
+    voiceSecond.value = 5 - document.getElementById("voiceFirst").value ;
+}
+
+adjust_Voice_First();
+adjust_Voice_Second();
+
+function nextPage(event) {
+
+    event.preventDefault();
+    console.log("oie");
+
+    if(voiceFirstItem > voiceSecondItem){
+        var voiceTrait1 = document.getElementById("first-input-left").value;
+        var voiceTrait2 = document.getElementById("second-input-left").value;
+    }
+
+    console.log(voiceTrait1);
+    console.log(voiceTrait2);
+
+    sessionStorage.setItem('voiceTrait1', goalValue);
+    sessionStorage.setItem('voiceTrait1', audienceValue);
+    console.log(sessionStorage);
+
+  }
+
+  const form = document.querySelector('form');
+  form.addEventListener('submit', handleSubmit);
+
 </script>
