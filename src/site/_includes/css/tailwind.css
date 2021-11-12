@@ -110,7 +110,7 @@ code {
 
 h1 {
   @apply font-raleway !important;
-	font-weight: 800;
+	font-weight: 800 !important;
 }
 
 h2 {
@@ -120,4 +120,10 @@ h2 {
 
 p{
   @apply font-opensans !important;
+}
+
+.bg-glass{
+  background: url("/images/glasseffect.png");
+  background-size: cover;
+
 }
