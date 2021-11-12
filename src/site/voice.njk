@@ -2,34 +2,42 @@
 title: Voice
 layout: default
 ---
-<div>
-    <p>Result</p>
-</div>
 
-<section class="section">
-    <div class="rangeContainer">
-        <p id="first-input-left"> Serious </p>
-        <input id="voiceFirst" class="slider" type="range" min="0" max="5" value="2" aria-label="Analytical or Qualitative" onchange="adjust_Voice_Second();">
-        <p id="first-input-right"> good humour </p>
+<div class="grid grid-cols-2 gap-2 mx-auto"> 
 
-        <p id="second-input-left"> think </p>
-        <input id="voiceSecond" class="slider" type="range" min="0" max="5" value="3" aria-label="Assertive or Advisor" onchange="adjust_Voice_First();">
-        <p id="second-input-right"> think agains </p>
+  <div class="mx-16 px-8 text-left my-4">
+      <h1 class="text-4xl font-extrabold leading-relaxed my-2">Content Delivery</h1>
+      <p class="text-md"> Setting the tone of the personal AI is part of the foundational stones of the conversation. The ways content is delivered to be catered to the audience and reflect on the personal assistant's goals. Defining these characteristics is a constant trade-off between what is necessary or not. To make this decision, use the sliders to set the intensity of the tone your personal AI will have:</p>
+  </div>
+
+    <div class="mx-16 my-16">
+        <section class="section">
+            <div class="rangeContainer">
+                <p id="first-input-left"> Serious </p>
+                <input id="voiceFirst" class="slider" type="range" min="0" max="5" value="2" aria-label="Analytical or Qualitative" onchange="adjust_Voice_Second();">
+                <p id="first-input-right"> good humour </p>
+
+                <p id="second-input-left"> think </p>
+                <input id="voiceSecond" class="slider" type="range" min="0" max="5" value="3" aria-label="Assertive or Advisor" onchange="adjust_Voice_First();">
+                <p id="second-input-right"> think agains </p>
+            </div>
+
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute h-16 w-32" 
+            id="next" onclick="savePage();">
+            save Page
+        </button>
+        </section>
     </div>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute h-16 w-32" 
-id="next" onclick="savePage();">
-save Page
-</button>
-</section>
 
-<div class="my-32">
-
-
-<div class="my-32">
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute bottom-auto right-2 h-16 w-32" >
-<a href="/traits">Next page</a>
-</button>
 </div>
+
+<div class="my-32">
+  <button class="border-white border-4 font-raleway uppercase	text-white font-extrabold py-4 px-8 rounded-lg my-4 align-right flex text-md">
+    <a href="/socialjustice">Next page</a>
+  </button>
+</div>
+
+
 
 <script>
 {# show goal and audience #}

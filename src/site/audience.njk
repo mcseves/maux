@@ -1,5 +1,5 @@
 ---
-title: AI Character
+title: Define the audience
 layout: default
 ---
 
@@ -13,8 +13,8 @@ layout: default
 
   <div class="mx-16 my-16">
     <form class="">
-      <textarea id="audience" name="audience" class="bg-glass h-80 px-8 py-8 w-full sm:text-md rounded-md text-white font-opensans font-light italic resize-none" placeholder="What experiences are they using your service for?&#10;What are people's purposes when interacting?&#10;Where are they from? What is their background?"></textarea>
-      <button class="border-white border-4 font-raleway uppercase	text-white font-extrabold py-4 px-8 rounded-lg my-4 justify-end floar-right text-md" type="submit">Continue</button>
+      <textarea id="audience" name="audience" class="bg-glass h-80 px-8 py-8 w-full sm:text-md rounded-md text-white font-opensans font-light italic resize-none" placeholder="What experiences are they using your service for? &#10;What are people's purposes when interacting? &#10;Where are they from? What is their background?"></textarea>
+      <button class="border-white border-4 font-raleway uppercase	text-white font-extrabold py-4 px-8 rounded-lg my-4 justify-end float-right text-md" type="submit">Continue</button>
     </form>
   </div>
 
@@ -40,7 +40,7 @@ function handleSubmit(event) {
     sessionStorage.setItem('audience', audienceValue);
     console.log(sessionStorage);
 
-    window.location.href="/voice";
+    window.location.href="/goals";
 
   }
 

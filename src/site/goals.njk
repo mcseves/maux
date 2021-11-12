@@ -1,0 +1,53 @@
+---
+title: Define your goals
+layout: default
+---
+
+
+<div class="grid grid-cols-2 gap-2 mx-auto"> 
+
+  <div class="mx-16 px-8 text-left my-4">
+      <h1 class="text-4xl font-extrabold leading-relaxed my-2">Define your goals </h1>
+      <p class="text-md"> Every service has a goal that it aims to achieve. What is this AI purpose? Think about the things that may lead someone to use this tool, what interactions and things they wish to take from it.</p>
+  </div>
+
+  <div class="mx-16 my-16">
+    <form class="">
+      <textarea id="goals" name="goals" class="bg-glass h-80 px-8 py-8 w-full sm:text-md rounded-md text-white font-opensans font-light italic resize-none" placeholder="What will be the field of action of this AI? &#10;What roles will the AI play? &#10;What are this AI's functions? &#10;What things are customers getting out of this interaction?"></textarea>
+      <button class="border-white border-4 font-raleway uppercase	text-white font-extrabold py-4 px-8 rounded-lg my-4 justify-end float-right text-md" type="submit">Continue</button>
+    </form>
+  </div>
+
+</div>
+
+{# <div class="my-32">
+  <button class="border-white border-4 font-raleway uppercase	text-white font-extrabold py-4 px-8 rounded-lg my-4 align-right flex text-md">
+    <a href="/voice">Next page</a>
+  </button>
+</div> #}
+
+
+<script>
+function handleSubmit(event) {
+
+    event.preventDefault();
+    console.log("oie");
+
+    var goalsValue = document.getElementById("goals").value;
+
+    console.log(goalsValue);
+
+    sessionStorage.setItem('goals', goalsValue);
+    console.log(sessionStorage);
+
+    window.location.href="/robotscale";
+
+  }
+
+  const form = document.querySelector('form');
+  form.addEventListener('submit', handleSubmit);
+
+
+
+
+</script>
