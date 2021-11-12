@@ -20,7 +20,7 @@ h1.heading {
   @apply text-3xl;
   @apply text-gray-900;
   @apply mb-4;
-  @apply font-semibold;
+  @apply font-raleway;
 }
 @screen md {
   h1.heading {
@@ -32,13 +32,12 @@ h1.heading {
   Base styles for links
 */
 a {
-  @apply border-b-2;
-  @apply border-teal-400;
+  @apply font-raleway;
 }
 a:hover,
 a:focus {
- @apply border-b-2;
- @apply border-teal-200;
+ /* @apply border-b-2; */
+ /* @apply border-teal-200; */
 }
 a.naked-link:link,
 a.naked-link:visited {
@@ -103,4 +102,22 @@ code {
 
 .bg-color{
   background-color: #1B122F;
+}
+
+.button-pinkred{
+  background: conic-gradient(from 178.18deg at 50% 50%, rgba(255, 88, 0, 0.76) 0deg, rgba(255, 0, 199, 0.916813) 144.84deg, #FF0000 221.68deg, #FF0000 360deg);
+}
+
+h1 {
+  @apply font-raleway !important;
+	font-weight: 800;
+}
+
+h2 {
+  @apply font-raleway !important;
+  font-weight: 600 !important;
+}
+
+p{
+  @apply font-opensans !important;
 }
