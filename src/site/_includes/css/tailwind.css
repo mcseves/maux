@@ -100,3 +100,7 @@ code {
 /* purgecss end ignore */
 
 @tailwind utilities;
+
+.bg-color{
+  background-color: #1B122F;
+}
