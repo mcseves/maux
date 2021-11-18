@@ -3,14 +3,32 @@ title: Voice
 layout: default
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mx-auto"> 
+<div class="grid grid-cols-6 gap-2 justify-center items-center "> 
 
-  <div class="mx-4 sm:mx-16 px-8 text-left sm:my-4">
-      <h1 class="text-xl sm:text-4xl font-extrabold leading-relaxed my-2">Content Delivery</h1>
-      <p class="text-md"> Setting the tone of the personal AI is part of the foundational stones of the conversation. The ways content is delivered to be catered to the audience and reflect on the personal assistant's goals. Defining these characteristics is a constant trade-off between what is necessary or not. To make this decision, use the sliders to set the intensity of the tone your personal AI will have:</p>
+  <div class="mx-auto">
+  <a href="/traits">
+  <img src="/images/button-back.svg"></img></a>
   </div>
 
-  <div class="mx-4 sm:mx-16 my-4 sm:my-16 px-4">
+  <div class="col-span-4 text-center">
+  <h1 class="text-xl sm:text-2xl font-extrabold leading-relaxed my-2">Define the style</h1>
+  <h2 class="text-md sm:text-lg font-normal font-opensans">The tone of voice sets how the AI speaks</h2>
+  </div>
+
+  <div class="col-span-1">
+  <img src="/images/blob-small-3.png"></img>
+  </div>
+
+</div>
+
+<div class="mx-auto"> 
+
+  <div class="mx-16 sm:mx-32 px-8 text-left my-4 sm:my-8">
+    <p class="text-base sm:text-md"> The tone of voice will unveil the AI's personality and influence the customer's perception of the solution. Therefore, the content delivery should reflect your audience's goal when engaging with the AI and the setting where it happens. 
+
+Use the sliders to set the intensity of the tone.</p>
+  </div>
+<div class="mx-4 sm:mx-16 my-4 sm:my-16 px-4">
         <section class="section">
             <div class="rangeContainer">
                 <p id="first-input-left"> Serious </p>
@@ -22,20 +40,18 @@ layout: default
                 <p id="second-input-right"> think agains </p>
             </div>
 
-            <button class="border-white border-4 font-raleway uppercase	text-white font-extrabold rounded-lg justify-end float-right py-1 sm:py-4 px-4 sm:px-8 my-8 sm:my-12 text-md sm:text-2xl" 
-            id="next" onclick="savePage();">
-            save Page
-        </button>
+
+
+
         </section>
     </div>
+  <div class="mx-4 sm:mx-16 my-4 sm:my-16 px-4">
+    <form>
+    <button class="border-white bg-white font-raleway uppercase text-pb font-extrabold py-1 sm:py-2 px-2 sm:px-3 rounded-lg my-8 sm:my-12 text-md sm:text-xl	float-right" type="submit">Next</button></form>
+  </div>
 
 </div>
 
-<div class="my-32">
-  <button class="border-white border-4 font-raleway uppercase	text-white font-extrabold py-4 px-8 rounded-lg my-4 align-right flex text-md">
-    <a href="/socialjustice">Next page</a>
-  </button>
-</div>
 
 
 
@@ -90,10 +106,21 @@ function adjust_Voice_Second() {
     voiceSecond.value = 5 - document.getElementById("voiceFirst").value ;
     updateValues();
 }
+
 adjust_Voice_First();
 adjust_Voice_Second();
 
+function handleSubmit(event) {
 
+    event.preventDefault();
+    console.log("next");
+
+    window.location.href="/step4-theimpact";
+
+  }
+
+  const form = document.querySelector('form');
+  form.addEventListener('submit', handleSubmit);
 
 next=document.getElementById("next");
 {# next.addEventListener("click", savePage'); #}

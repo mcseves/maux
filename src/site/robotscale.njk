@@ -2,32 +2,62 @@
 title: Human or Robot?
 layout: default
 ---
+<div class="grid grid-cols-6 gap-2 justify-center items-center "> 
 
-
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mx-auto"> 
-
-  <div class="mx-4 sm:mx-16 px-8 text-left sm:my-4">
-      <h1 class="text-xl sm:text-4xl font-extrabold leading-relaxed my-2">Human or robot? </h1>
-      <p class="text-base sm:text-md"> text to come</p>
+  <div class="mx-auto">
+  <a href="/step2-theanatomy">
+  <img src="/images/button-back.svg"></img></a>
   </div>
 
-  <div class="mx-4 sm:mx-16 my-4 sm:my-16 px-4">
-    <form class="">
-      <input id="humanrobot" name="humanrobot" type="range" max="100" value="40" class="range w-full"> 
-      <button class="border-white border-4 font-raleway uppercase	text-white font-extrabold rounded-lg justify-end float-right py-1 sm:py-4 px-4 sm:px-8 my-8 sm:my-12 text-md sm:text-2xl" type="submit">Continue</button>
-    </form>
+  <div class="col-span-4 text-center">
+  <h1 class="text-xl sm:text-2xl font-extrabold leading-relaxed my-2">Decide its nature</h1>
+  <h2 class="text-md sm:text-lg font-normal font-opensans">Bringing transparency to the interactions</h2>
+  </div>
+
+  <div class="col-span-1">
+  <img src="/images/blob-small-2.png"></img>
   </div>
 
 </div>
 
-{# <div class="my-32">
-  <button class="border-white border-4 font-raleway uppercase	text-white font-extrabold py-4 px-8 rounded-lg my-4 align-right flex text-md">
-    <a href="/voice">Next page</a>
-  </button>
-</div> #}
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mx-auto"> 
+
+  <div class="mx-4 sm:mx-16 px-8 text-left my-4 sm:my-16">
+    <p class="text-base sm:text-md"> Giving human formats and manners to a conversational agent can lead to ethical issues, as people tend to associate moral activities, which an AI doesn't have. Consider how transparency can help your relationship with the audience, and reflect whether or not it is indispensable to anthropomorphize your product.
+<br><br>
+Regardless of how humanistic or robotic it ends up being, don't forget to make explicit to the customer that they are interacting with artificial intelligence.</p>
+  </div>
+
+  <div class="mx-4 sm:mx-16 my-4 sm:my-16 px-4">
+    <p class="font-bold mb-8" > Human or Robot? Click to decide</p>
+    <img src="/images/human.png" class="w-2/3"  id="humanrobot" onclick="changeImage()"></img>
+    <form>
+    <button class="border-white bg-white font-raleway uppercase text-pb font-extrabold py-1 sm:py-2 px-2 sm:px-3 rounded-lg my-8 sm:my-12 text-md sm:text-xl	float-right" type="submit">Next</button></form>
+  </div>
+
+</div>
+
+
 
 
 <script>
+
+function changeImage(){
+  var index = 0
+   if (document.getElementById("humanrobot").src == "/images/human.png" && index==0) 
+    {
+        document.getElementById("humanrobot").src = "/images/human.png";
+        console.log("robot");
+        index++;
+    }
+    else 
+    {
+        document.getElementById("humanrobot").src = "/images/robot.png";
+        console.log("human");
+        index++;
+    }
+}
+
 function handleSubmit(event) {
 
     event.preventDefault();

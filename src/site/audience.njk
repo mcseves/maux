@@ -3,20 +3,42 @@ title: Define the audience
 layout: default
 ---
 
+<div class="grid grid-cols-6 gap-2 justify-center items-center "> 
+
+  <div class="mx-auto">
+  <a href="/goals">
+  <img src="/images/button-back.svg"></img></a>
+  </div>
+
+  <div class="col-span-4 text-center">
+  <h1 class="text-xl sm:text-2xl font-extrabold leading-relaxed my-2">Describe your audience</h1>
+  <h2 class="text-md sm:text-lg font-normal font-opensans">Identifying your customers</h2>
+  </div>
+
+  <div class="col-span-1">
+  <img src="/images/blob-small-1.png"></img>
+  </div>
+
+</div>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mx-auto"> 
 
-  <div class="mx-4 sm:mx-16 px-8 text-left sm:my-4">
-      <h1 class="text-xl sm:text-4xl font-extrabold leading-relaxed my-2">Define your audience </h1>
-      <p class="text-base sm:text-md"> The first step in this journey is to consider who are the people interacting with the personal AI. Think about their goals, their struggles, and what main characteristics define this group of people. </p>
+  <div class="mx-4 sm:mx-16 px-8 text-left my-4 sm:my-16">
+    <p class="text-base sm:text-md"> Consider who are the people interacting with the personal AI. Think about their goals, their struggles, and what main characteristics define this group of people. </p>
   </div>
 
   <div class="mx-4 sm:mx-16 my-4 sm:my-16 px-4">
     <form class="">
-      <textarea id="audience" name="audience" class="bg-glass h-80 px-8 py-8 w-full text-sm sm:text-md rounded-md text-white font-opensans font-light italic resize-none" placeholder="What experiences are they using your service for? &#10;What are people's purposes when interacting? &#10;Where are they from? What is their background?"></textarea>
-      <button class="border-white border-4 font-raleway uppercase	text-white font-extrabold rounded-lg justify-end float-right py-1 sm:py-4 px-4 sm:px-8 my-8 sm:my-12 text-md sm:text-2xl" type="submit">Continue</button>
+      <textarea id="audience" name="audience" class="textarea border-white border-solid border-3 h-48 px-8 py-8 w-full text-sm sm:text-md rounded-md bg-color text-white font-opensans font-light italic resize-none" placeholder="Type here &#10;What experiences are they using your service for? &#10;What are people's purposes when interacting? &#10;Where are they from? What is their background?"></textarea>
+      <div class="content-end	">
+        <button class="border-white bg-white font-raleway uppercase text-pb font-extrabold py-1 sm:py-2 px-2 sm:px-3 rounded-lg my-8 sm:my-12 text-md sm:text-xl	float-right" type="submit">Next</button>
+      </div>
+    
     </form>
   </div>
+
+</div>
+
 
 </div>
 
@@ -40,7 +62,7 @@ function handleSubmit(event) {
     sessionStorage.setItem('audience', audienceValue);
     console.log(sessionStorage);
 
-    window.location.href="/goals";
+    window.location.href="/step2-theanatomy";
 
   }
 

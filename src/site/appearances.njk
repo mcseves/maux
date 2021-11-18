@@ -1,25 +1,37 @@
 ---
-title: Look
+title: Shape
 layout: default
 ---
 
+<div class="grid grid-cols-6 gap-2 justify-center items-center "> 
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mx-auto"> 
-
-  <div class="mx-4 sm:mx-16 px-8 text-left sm:my-4">
-      <h1 class="text-xl sm:text-4xl font-extrabold leading-relaxed my-2">What does it look like? </h1>
-      <p class="text-base sm:text-md"> text to come</p>
+  <div class="mx-auto">
+  <a href="/robotscale">
+  <img src="/images/button-back.svg"></img></a>
   </div>
-  <div class="mx-4 sm:mx-16 my-4 sm:my-16 px-4">
 
+  <div class="col-span-4 text-center">
+  <h1 class="text-xl sm:text-2xl font-extrabold leading-relaxed my-2">Choose the shape</h1>
+  <h2 class="text-md sm:text-lg font-normal font-opensans">Creating tangible connections</h2>
+  </div>
+
+  <div class="col-span-1">
+  <img src="/images/blob-small-2.png"></img>
   </div>
 
 </div>
 
-<div class="my-32">
-  <button class="border-white border-4 font-raleway uppercase	text-white font-extrabold py-4 px-8 rounded-lg my-4 align-right flex text-md">
-    <a href="/traits">Next page</a>
-  </button>
+<div class="mx-auto"> 
+
+  <div class="mx-16 sm:mx-32 px-8 text-left my-4 sm:my-8">
+    <p class="text-base sm:text-md"> The visual representation of the AI is a materialization of your product. It can be with an avatar, icon, or even a physical product. This portrayal influences the perceptions of transparency of the machine and the insight of its content. Consider the context of your AI when deciding how it will look like.</p>
+  </div>
+
+  <div class="mx-4 sm:mx-16 my-4 sm:my-16 px-4">
+    <form>
+    <button class="border-white bg-white font-raleway uppercase text-pb font-extrabold py-1 sm:py-2 px-2 sm:px-3 rounded-lg my-8 sm:my-12 text-md sm:text-xl	float-right" type="submit">Next</button></form>
+  </div>
+
 </div>
 
 
@@ -29,14 +41,14 @@ function handleSubmit(event) {
     event.preventDefault();
     console.log("oie");
 
-    var humanrobotValue = document.getElementById("humanrobot").value;
+    {# var humanrobotValue = document.getElementById("humanrobot").value;
 
     console.log(humanrobotValue);
 
-    sessionStorage.setItem('humanrobot', humanrobotValue);
+    sessionStorage.setItem('humanrobot', humanrobotValue); #}
     console.log(sessionStorage);
 
-    window.location.href="/voice";
+    window.location.href="/step3-thepersonality";
 
   }
 

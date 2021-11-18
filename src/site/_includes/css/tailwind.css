@@ -108,6 +108,13 @@ code {
   background: conic-gradient(from 178.18deg at 50% 50%, rgba(255, 88, 0, 0.76) 0deg, rgba(255, 0, 199, 0.916813) 144.84deg, #FF0000 221.68deg, #FF0000 360deg);
 }
 
+.textarea:focus {
+    outline: none !important;
+    border:1px solid red;
+    box-shadow: 0 0 10px #719ECE;
+  }
+}
+
 h1 {
   @apply font-raleway !important;
 	font-weight: 800 !important;
@@ -121,7 +128,7 @@ h2 {
 p{
   @apply font-opensans !important;
 }
-
+x
 .bg-glass{
   /* background: url("/images/glasseffect.png");
   background-size: cover; */
@@ -138,3 +145,9 @@ p{
 
   
 }
+
+.text-pb{
+  color:#1B122F;
+
+}
+

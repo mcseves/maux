@@ -4,25 +4,37 @@ layout: default
 ---
 
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mx-auto"> 
+<div class="grid grid-cols-6 gap-2 justify-center items-center "> 
 
-  <div class="mx-4 sm:mx-16 px-8 text-left sm:my-4">
-      <h1 class="text-xl sm:text-4xl font-extrabold leading-relaxed my-2">Personality</h1>
-      <p class="text-base sm:text-md"> Personality traits can help define how the AI will behave throughout the conversation. Psychology dictates that there are 5 major factors that can characterize human behaviour. How would this be represented in the virtual world?</p>
+  <div class="mx-auto">
+  <a href="/step3-thepersonality">
+  <img src="/images/button-back.svg"></img></a>
+  </div>
+
+  <div class="col-span-4 text-center">
+  <h1 class="text-xl sm:text-2xl font-extrabold leading-relaxed my-2">Set up the personality</h1>
+  <h2 class="text-md sm:text-lg font-normal font-opensans">Dictating the conversation's flow.</h2>
+  </div>
+
+  <div class="col-span-1">
+  <img src="/images/blob-small-3.png"></img>
+  </div>
+
+</div>
+
+<div class="mx-auto"> 
+
+  <div class="mx-16 sm:mx-32 px-8 text-left my-4 sm:my-8">
+    <p class="text-base sm:text-md"> The personality traits are responsible for giving emotion to the AI. It establishes the AI's behaviours in conversation and is how people will connect to it. Consider your target audience when choosing the traits for your AI. Is it a broad audience or a specific one? How do they communicate?
+Select up to five traits that are consistent with your public.</p>
   </div>
 
   <div class="mx-4 sm:mx-16 my-4 sm:my-16 px-4">
-
+    <form>
+    <button class="border-white bg-white font-raleway uppercase text-pb font-extrabold py-1 sm:py-2 px-2 sm:px-3 rounded-lg my-8 sm:my-12 text-md sm:text-xl	float-right" type="submit">Next</button></form>
   </div>
 
 </div>
-
-<div class="my-32">
-  <button class="border-white border-4 font-raleway uppercase	text-white font-extrabold py-4 px-8 rounded-lg my-4 align-right flex text-md">
-    <a href="/voice">Next page</a>
-  </button>
-</div>
-
 
 <script>
 function handleSubmit(event) {
@@ -30,11 +42,11 @@ function handleSubmit(event) {
     event.preventDefault();
     console.log("oie");
 
-    var humanrobotValue = document.getElementById("humanrobot").value;
+    {# var humanrobotValue = document.getElementById("humanrobot").value;
 
     console.log(humanrobotValue);
 
-    sessionStorage.setItem('humanrobot', humanrobotValue);
+    sessionStorage.setItem('humanrobot', humanrobotValue); #}
     console.log(sessionStorage);
 
     window.location.href="/voice";
