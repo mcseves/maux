@@ -7,7 +7,9 @@ layout: default
     set traitsList = [
     { "nameLeft":"General", "idLeft":"first-input-left", "nameRight": "Personal" , "idRight":"first-input-right", "function":"adjust_Voice_Second()", "idRange":"voiceFirst"},
     { "nameLeft":"Passive", "idLeft":"second-input-left", "nameRight": "Assertive" , "idRight":"second-input-right", "function":"adjust_Voice_First()", "idRange":"voiceSecond"},
-    { "nameLeft":"Serious", "idLeft":"third-input-left", "nameRight": "Funny" , "idRight":"third-input-right", "function":"updateValues()", "idRange":"voiceThird"}
+    { "nameLeft":"Serious", "idLeft":"third-input-left", "nameRight": "Funny" , "idRight":"third-input-right", "function":"updateValues()", "idRange":"voiceThird"},
+    { "nameLeft":"Formal", "idLeft":"fourth-input-left", "nameRight": "Informal" , "idRight":"fourth-input-right", "function":"adjust_Voice_Fifth()", "idRange":"voiceFourth"},
+    { "nameLeft":"Irreverent", "idLeft":"fifth-input-left", "nameRight": "Respectful" , "idRight":"fifth-input-right", "function":"adjust_Voice_Fourth()", "idRange":"voiceFifth"}
     ]
 %}
 
@@ -35,13 +37,13 @@ layout: default
     <p class="text-base sm:text-md text-center"> The tone of voice will unveil the AI's personality and influence the customer's perception of the solution. Therefore, the content delivery should reflect your audience's goal when engaging with the AI and the setting where it happens. <br>Use the sliders to set the intensity of the tone.</p>
   </div>
 
-<fieldset class="mx-auto w-2/3">
+<fieldset class="mx-auto w-3/4">
 
     {% for trait in traitsList %}
-      <div class="my-4 mx-auto">
-   
+      <div class="my-4 mx-auto font-opensans text-sm align-center">
       <span id="{{trait.idLeft}}" class="mx-4">{{trait.nameLeft}}</span>
-      <input type="range" id="{{trait.idRange}}" min="0" max="5" class="w-2/3  mx-auto" onchange="{{trait.function}}">
+      <span id="trait.subtitleLeft" class="text-xs italic">explaining</span>
+      <input type="range" id="{{trait.idRange}}" min="0" max="5" class="w-3/5 mx-4" onchange="{{trait.function}}">
       <span id="{{trait.idRight}}" class="mx-4">{{trait.nameRight}}</span>
       </div>
 
@@ -65,8 +67,8 @@ layout: default
 var voiceFirstItem = document.getElementById("voiceFirst");
 var voiceSecondItem = document.getElementById("voiceSecond");
 var voiceThirdItem = document.getElementById("voiceThird");
-{# var voiceFourthItem = document.getElementById("voiceFourth"); #}
-{# var voiceFifthItem = document.getElementById("voiceFifth");  #}
+var voiceFourthItem = document.getElementById("voiceFourth");
+var voiceFifthItem = document.getElementById("voiceFifth"); 
   
 {# save in storage #}
 function updateValues() {
@@ -75,18 +77,12 @@ function updateValues() {
     console.log("oie");
 
     if(voiceFirstItem.value < voiceSecondItem.value){
-         console.log("if now");
         var voiceTrait1 = document.getElementById("first-input-left").innerHTML;
         var voiceTrait2 = document.getElementById("second-input-right").innerHTML;
-         console.log("voiceTrait1");
-         console.log("voiceTrait2");
     }
     else {
-        console.log("else now");
         var voiceTrait1 = document.getElementById("first-input-right").innerHTML;
         var voiceTrait2 = document.getElementById("second-input-left").innerHTML;
-        console.log("voiceTrait1");
-         console.log("voiceTrait2");
     }
 
     if(voiceThirdItem.value < 3){
@@ -95,15 +91,28 @@ function updateValues() {
     else{
       var voiceTrait3 = document.getElementById("third-input-right").innerHTML;
     }
+
+    if(voiceFourthItem.value < voiceFifthItem.value){
+        var voiceTrait4 = document.getElementById("fourth-input-left").innerHTML;
+        var voiceTrait5 = document.getElementById("fifth-input-right").innerHTML;
+    }
+    else {
+        var voiceTrait4 = document.getElementById("fourth-input-right").innerHTML;
+        var voiceTrait5 = document.getElementById("fifth-input-left").innerHTML;
+    }
   
     
     console.log(voiceTrait1);
     console.log(voiceTrait2);
     console.log(voiceTrait3);
+    console.log(voiceTrait4);
+    console.log(voiceTrait5);
     
     sessionStorage.setItem('voiceTrait1', voiceTrait1);
     sessionStorage.setItem('voiceTrait2', voiceTrait2);
     sessionStorage.setItem('voiceTrait3', voiceTrait3);
+    sessionStorage.setItem('voiceTrait4', voiceTrait4);
+    sessionStorage.setItem('voiceTrait5', voiceTrait5);
     console.log(sessionStorage);
 
   }
@@ -119,8 +128,20 @@ function adjust_Voice_Second() {
     updateValues();
 }
 
+function adjust_Voice_Fourth() {
+    voiceFourth.value = 5 - document.getElementById("voiceFifth").value ;
+    updateValues();
+}
+
+function adjust_Voice_Fifth() {
+    voiceFifth.value = 5 - document.getElementById("voiceFourth").value ;
+    updateValues();
+}
+
 adjust_Voice_First();
 adjust_Voice_Second();
+adjust_Voice_Fourth();
+adjust_Voice_Fifth();
 
 function handleSubmit(event) {
 

@@ -29,26 +29,176 @@ layout: default
 Select up to five traits that are consistent with your public.</p>
   </div>
 
+
+  <ul class='pie'>
+  <li class='slice'>
+    <div class='slice-contents sliceA deliberate' id="deliberate" onclick="javascript:changeColorTrait1();">
+        <p class="textpie1">Deliberate</p>
+    </div>
+  </li>
+  <li class='slice'>
+    <div class='slice-contents sliceB creative' id="creative" onclick="javascript:changeColorTrait2();">
+        <p class="textpie2">Creative</p>
+    </div>
+  </li>
+  <li class='slice'>
+    <div class='slice-contents sliceA cordial' id="cordial" onclick="javascript:changeColorTrait3();">
+        <p class="textpie3">Cordial</p>
+    </div>
+  </li>
+  <li class='slice'>
+    <div class='slice-contents sliceB outgoing' id="outgoing" onclick="javascript:changeColorTrait4();">
+        <p class="textpie4">Outgoing</p>
+    </div>
+  </li>
+  <li class='slice'>
+    <div class='slice-contents sliceA vulnerable' id="vulnerable" onclick="javascript:changeColorTrait5();">
+        <p class="textpie5">Vulnerable</p>
+    </div>
+  </li>
+  <li class='slice'>
+    <div class='slice-contents sliceB dynamic' id="dynamic" onclick="javascript:changeColorTrait1();">
+        <p class="textpie6">Dynamic</p>
+    </div>
+  </li>
+  <li class='slice'>
+    <div class='slice-contents sliceA conservative' id="conservative" onclick="javascript:changeColorTrait2();">
+        <p class="textpie7">Conservative</p>
+    </div>
+  </li>
+  <li class='slice'>
+    <div class='slice-contents sliceB friendly' id="friendly" onclick="javascript:changeColorTrait3();">
+        <p class="textpie8">Friendly</p>
+    </div>
+  </li>
+  <li class='slice'>
+    <div class='slice-contents sliceA reserved' id="reserved" onclick="javascript:changeColorTrait4();">
+        <p class="textpie9">Reserved</p>
+    </div>
+  </li>
+  <li class='slice'>
+    <div class='slice-contents sliceB confident' id="confident" onclick="javascript:changeColorTrait5();">
+        <p class="textpie10">Confident</p>
+    </div>
+  </li>
+</ul>
+
+
   <div class="mx-4 sm:mx-16 my-4 sm:my-16 px-4">
     <form>
     <button class="border-white bg-white font-raleway uppercase text-pb font-extrabold py-1 sm:py-2 px-2 sm:px-3 rounded-lg my-8 sm:my-12 text-md sm:text-xl	float-right" type="submit">Next</button></form>
   </div>
 
+
 </div>
 
 <script>
+function changeColorTrait1() { 
+    var delib = document.getElementById("deliberate");
+    var delibColor = window.getComputedStyle(delib).backgroundColor;
+    var dyn = document.getElementById("dynamic");
+    var dynColor = window.getComputedStyle(dyn).backgroundColor;
+
+
+    if (delibColor === "rgba(76, 135, 247, 0.3)" || delibColor === "rgb(86, 80, 101)") {
+        document.getElementById("deliberate").style.background = "#5c92f9";
+        document.getElementById("dynamic").style.background = "#565065"; 
+        sessionStorage.setItem('trait1', "deliberate");
+
+    } else {
+        document.getElementById("deliberate").style.background = "#565065";
+        document.getElementById("dynamic").style.background = "#5c92f9"; 
+        sessionStorage.setItem('trait1', "dynamic");
+    }
+    console.log(sessionStorage);
+}
+
+function changeColorTrait2() { 
+    var create = document.getElementById("creative");
+    var createColor = window.getComputedStyle(create).backgroundColor;
+    var consv = document.getElementById("conservative");
+    var consvColor = window.getComputedStyle(consv).backgroundColor;
+
+    console.log(createColor);
+
+    if (createColor === "rgba(76, 135, 247, 0.3)" || createColor === "rgb(86, 80, 101)") {
+        document.getElementById("creative").style.background = "#4C87F7";
+        document.getElementById("conservative").style.background = "#565065"; 
+        sessionStorage.setItem('trait2', "creative");
+
+    } else {
+        document.getElementById("creative").style.background = "#565065";
+        document.getElementById("conservative").style.background = "#4C87F7"; 
+        sessionStorage.setItem('trait2', "conservative");
+    }
+    console.log(sessionStorage);
+}
+
+function changeColorTrait3() { 
+    var cord = document.getElementById("cordial");
+    var cordColor = window.getComputedStyle(cord).backgroundColor;
+    var frd = document.getElementById("friendly");
+    var frdColor = window.getComputedStyle(frd).backgroundColor;
+
+
+    if (cordColor === "rgba(76, 135, 247, 0.3)" || cordColor === "rgb(86, 80, 101)") {
+        document.getElementById("cordial").style.background = "#3D79E9";
+        document.getElementById("friendly").style.background = "#565065"; 
+        sessionStorage.setItem('trait3', "cordial");
+
+    } else {
+        document.getElementById("cordial").style.background = "#565065";
+        document.getElementById("friendly").style.background = "#3D79E9"; 
+        sessionStorage.setItem('trait3', "friendly");
+    }
+    console.log(sessionStorage);
+}
+
+function changeColorTrait4() { 
+    var outgoing = document.getElementById("reserved");
+    var outgoingColor = window.getComputedStyle(outgoing).backgroundColor;
+    var resev = document.getElementById("outgoing");
+    var resevColor = window.getComputedStyle(resev).backgroundColor;
+
+
+    if (outgoingColor === "rgba(76, 135, 247, 0.3)" || outgoingColor === "rgb(86, 80, 101)") {
+        document.getElementById("reserved").style.background = "#8AB2FF";
+        document.getElementById("outgoing").style.background = "#565065"; 
+        sessionStorage.setItem('trait4', "reserved");
+
+    } else {
+        document.getElementById("reserved").style.background = "#565065";
+        document.getElementById("outgoing").style.background = "#8AB2FF"; 
+        sessionStorage.setItem('trait4', "outgoing");
+    }
+    console.log(sessionStorage);
+}
+
+function changeColorTrait5() { 
+    var delib= document.getElementById("confident");
+    var delibColor = window.getComputedStyle(delib).backgroundColor;
+    var dyn = document.getElementById("vulnerable");
+    var dynColor = window.getComputedStyle(dyn).backgroundColor;
+
+
+    if (delibColor === "rgba(76, 135, 247, 0.3)" || delibColor === "rgb(86, 80, 101)") {
+        document.getElementById("confident").style.background = "#6B9DFB";
+        document.getElementById("vulnerable").style.background = "#565065"; 
+        sessionStorage.setItem('trait5', "confident");
+
+    } else {
+        document.getElementById("confident").style.background = "#565065";
+        document.getElementById("vulnerable").style.background = "#6B9DFB"; 
+        sessionStorage.setItem('trait5', "vulnerable");
+    }
+    console.log(sessionStorage);
+}
+
+
 function handleSubmit(event) {
 
     event.preventDefault();
     console.log("oie");
-
-    {# var humanrobotValue = document.getElementById("humanrobot").value;
-
-    console.log(humanrobotValue);
-
-    sessionStorage.setItem('humanrobot', humanrobotValue); #}
-    console.log(sessionStorage);
-
     window.location.href="/voice";
 
   }
