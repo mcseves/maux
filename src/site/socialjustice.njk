@@ -1,5 +1,5 @@
 ---
-title: Human or Robot?
+title: Design for Diversity
 layout: default
 ---
 <div class="grid grid-cols-6 gap-2 justify-center items-center "> 
@@ -25,26 +25,69 @@ layout: default
   <div class="mx-4 sm:mx-16 px-8 text-left my-4 sm:my-16">
     <p class="text-base sm:text-md">  Including marginalized people in your design process is one of the first steps in achieving equity in technology and eliminating biased content from your personal assistant. When considering how your design affects minorities, bring real people to the process, as lived experiences are nontransferable to small limiting boxes.
 
-Randomize to see different groups, and lock the characteristics corresponding to your target audience.
-</p>
+    Randomize to see different groups, and lock the characteristics corresponding to your target audience.
+    </p>
   </div>
 
-  <div class="mx-4 sm:mx-16 my-4 sm:my-16 px-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mx-auto mt-16"> 
+    <div class="mx-2 px-2 text-left my-4">
+      <div class="bg-color rounded border-4 border-white justify-center">
+        <p class="py-2 px-2 text-xs float-left text-white italic">Race/Ethnicity</p>
+        <p id="racep" class="justify-center text-center text-white text-md my-9 mx-12" >Latin</p>
+      </div>
+    </div>
 
+    <div class="mx-2 px-2 text-left my-4">
+      <div class="bg-color rounded border-4 border-white justify-center">
+        <p class="py-2 px-2 text-xs float-left text-white italic">Age</p>
+        <p class="justify-center text-center text-white text-md my-9 mx-12" id="agep">Young adult</p>
+      </div>
+    </div>
+
+    <div class="mx-2 px-2 text-left my-4">
+      <div class="bg-color rounded border-4 border-white justify-center">
+        <p class="py-2 px-2 text-xs float-left text-white italic">Sexual Orientation</p>
+        <p class="justify-center text-center text-white text-md my-9 mx-12" id="orientationp">Lesbian</p>
+      </div>
+    </div>
+
+    <div class="mx-2 px-2 text-left my-4">
+      <div class="bg-color rounded border-4 border-white justify-center">
+        <p class="py-2 px-2 text-xs float-left text-white italic">Gender Identity</p>
+        <p class="justify-center text-center text-white text-md my-9 mx-12" id="genderp">Cis Woman</p>
+      </div>
+    </div>
+
+    <div class="mx-2 px-2 text-left my-4">
+      <div class="bg-color rounded border-4 border-white justify-center">
+        <p class="py-2 px-2 text-xs float-left text-white italic">Social Class</p>
+        <p class="justify-center text-center text-white text-md my-9 mx-12" id="socialp">Suburbs</p>
+      </div>
+    </div>
+
+    <div class="mx-2 px-2 text-left my-4">
+      <div class="bg-color rounded border-4 border-white justify-center">
+        <p class="py-2 px-2 text-xs float-left text-white italic">Religion</p>
+        <p class="justify-center text-center text-white text-md my-9 mx-12" id="religionp">Muslim</p>
+      </div>
+    </div>
+
+    <div class="col-span-1 sm:col-span-2 mx-auto">
+      <button class="border-white bg-white font-raleway uppercase text-pb font-bold py-2 sm:py-3 px-3 sm:px-4 rounded-lg my-8 sm:my-12 text-md sm:text-xl	float-right" id="shuffle" onclick="shuffleContent()">Shuffle</button>
+    </div>
+    
+  </div>
+</div>
+
+
+  <div class="mx-4 sm:mx-16 my-4 px-4 float-right">
     <form class="">
         <button class="border-white bg-white font-raleway uppercase text-pb font-extrabold py-1 sm:py-2 px-2 sm:px-3 rounded-lg my-8 sm:my-12 text-md sm:text-xl	float-right" type="submit">Finish</button>
-      </div>
-    
     </form>
   </div>
 
-</div>
-
-
-</div>
-
-
 <script>
+
 function handleSubmit(event) {
 
     event.preventDefault();
@@ -52,10 +95,50 @@ function handleSubmit(event) {
     window.location.href="/";
 
   }
+ 
+const form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
 
-  const form = document.querySelector('form');
-  form.addEventListener('submit', handleSubmit);
 
+const raceArray=["Latin","American indian", "Asian", "Black", "Hispanic", "Native Hawaiian", "White"];
+const ageArray=["Baby","Child", "Pre-teen", "Teenager", "Young Adult", "Middle-Aged Adult", "Elderly"];
+const sexArray=["Assexual","Bissexual", "Homossexual", "Heterossexual", "Demisexual", "Fluid", "Pansexual"];
+const genderArray=["Androgyne","Bigender", "Trans", "Women", "Men", "Genderfluid", "Nonbinary"];
+const socialArray=["Elite","Upper Middle Class", "Lower Middle Class", "Working Class", "Poor"];
+const religionArray=["Baha'i", "Buddhist", "Christian", "Confucianism", "Hinduist", "Muslim", "Jainism", "Jewish", "Shinto", "Sikhism", "Taoism", "Zoroastrianism", "Atheist", "Catholic"];
+
+function shuffleContent(){
+  {# race #}
+  var randomRace = raceArray[Math.floor(Math.random() * raceArray.length)];
+  document.getElementById("racep").textContent = randomRace;
+  sessionStorage.setItem('race', randomRace);
+
+  {# age #}
+  var randomAge = ageArray[Math.floor(Math.random() * ageArray.length)];
+  document.getElementById("agep").textContent = randomAge;
+  sessionStorage.setItem('age', randomAge);
+
+  {# gender #}
+  var randomGender = genderArray[Math.floor(Math.random() * genderArray.length)];
+  document.getElementById("genderp").textContent = randomGender;
+  sessionStorage.setItem('gender', randomGender);
+
+  {# sexual orientation #}
+  var randomSex = sexArray[Math.floor(Math.random() * sexArray.length)];
+  document.getElementById("orientationp").textContent = randomSex;
+  sessionStorage.setItem('sex', randomSex);
+
+  {# social #}
+  var randomSocial = socialArray[Math.floor(Math.random() * socialArray.length)];
+  document.getElementById("socialp").textContent = randomSocial;
+  sessionStorage.setItem('social', randomSocial);
+
+  {# religion #}
+  var randomReligion = religionArray[Math.floor(Math.random() * religionArray.length)];
+  document.getElementById("religionp").textContent = randomReligion;
+  sessionStorage.setItem('religion', randomReligion);
+
+}
 
 
 
